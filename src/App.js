@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './Pages/Header';
+// import Main from './Pages/Main';
+import React from 'react'
+import { createMuiTheme, ThemeProvider } from '@material-ui/core'
+
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: "Rubik",
+    fontWeightLight: 300,
+    fontWeightRegular: 500,
+    fontWeightMedium: 600,
+    fontWeightBold: 700
+  }
+})
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ThemeProvider theme={theme}>
+        <Header />
+        {/* <Main /> */}
+      </ThemeProvider>
+    </>
   );
 }
 
